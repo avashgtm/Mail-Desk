@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import LoginWithGoogleButton from './LoginWithGoogleButton';
-
+import Payments from './Payments';
 class Header extends Component {
 	renderContent() {
 		switch(this.props.auth) {
@@ -19,10 +19,13 @@ class Header extends Component {
 		          </li>
 				);
 			default:
-;				return [
-		          <li key="1">
-		          	<a href="api/logout">Logout</a>
-		          </li>
+				return [
+					<li key="2" className='uk-navbar-item'>
+						<Payments />
+					</li>,
+					<li key="1" className='uk-navbar-item'>
+					<a href="api/logout">Logout</a>
+					</li>
 				];
 
 		}
